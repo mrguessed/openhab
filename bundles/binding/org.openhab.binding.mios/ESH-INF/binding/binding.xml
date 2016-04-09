@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding:binding id="mios"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:binding="http://eclipse.org/smarthome/schemas/binding/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/binding/v1.0.0 http://eclipse.org/smarthome/schemas/binding-1.0.0.xsd">
+
+    <name>MiOS Binding</name>
+    <description>MiOS is a home-automation platform natively supporting Z-Wave, ZigBee and Bluetooth devices, along with extensibile support for Security systems, AV control, Energy Monitoring and Heating/Cooling.</description>
+    <author>Mark Clark</author>
+
+    <config-description>
+        <parameter name="host" type="text" required="true">
+            <label>Host or IP</label>
+            <context>network-address</context>
+            <description>The host name or IP address of the MiOS Unit</description>
+        </parameter>
+        <parameter name="port" type="integer" min="1" max="65535">
+            <label>Port</label>
+            <context>network-address</context>
+            <description>The port of the MiOS Unit (optional)</description>
+            <default>3480</default>
+            <advanced>true</advanced>
+        </parameter>
+        <parameter name="timeout" type="integer">
+            <label>Communications Timeout (ms)</label>
+            <description>Timeout (ms) used to compute MiOS Unit timeouts (optional)</description>
+            <default>60000</default>
+            <advanced>true</advanced>
+        </parameter>
+        <parameter name="minimumDelay" type="integer">
+            <label>Wait time (ms)</label>
+            <description>Wait time (ms) for MiOS Unit to bundle changes (optional)</description>
+            <default>0</default>
+            <advanced>true</advanced>
+        </parameter>
+        <parameter name="refreshCount" type="integer" >
+            <label>Changes only</label>
+            <description>Number of incremental cycles before a full refresh cycle occurs (optional)</description>
+            <default>0</default>
+            <advanced>true</advanced>
+        </parameter>
+        <parameter name="errorCount" type="integer">
+            <label>Error Count</label>
+            <description>Number of communication errors required to force a full reload (optional)</description>
+            <default>1</default>
+            <advanced>true</advanced>
+        </parameter>
+    </config-description>
+</binding:binding>
+
